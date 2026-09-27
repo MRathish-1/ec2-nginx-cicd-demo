@@ -20,6 +20,7 @@ jobs:
         with:
           role-to-assume: arn:aws:iam::128695244589:role/github-actions-deploy-role
           aws-region: us-east-1
+          role-skip-session-tagging: true
 
       - name: Upload index.html to S3
         run: aws s3 cp index.html s3://nginx-cicd-demo-artifacts-rm/index.html
